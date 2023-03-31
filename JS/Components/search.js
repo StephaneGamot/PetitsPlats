@@ -1,4 +1,4 @@
-//import { recipes } from "./DATA/recipes.js";
+
 import createCard from "../Template/createCard.js";
 
 export default function searchAndFilter(recipes) {

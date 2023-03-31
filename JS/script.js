@@ -1,20 +1,10 @@
-
 import { recipes } from "./DATA/recipes.js";
 import createCard from "./Template/createCard.js";
 import searchAndFilter from "./Components/search.js";
+import displayRecipes from "./Components/displayRecipes.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  searchAndFilter(recipes);
-  displayInitialRecipes();
+	searchAndFilter(recipes);
+	displayRecipes(recipes, createCard);
 });
 
-function displayInitialRecipes() {
-  const recipeContainer = document.getElementById("card-container");
-
-  recipes.forEach((recipe) => {
-    if (recipeContainer.childElementCount < 50) {
-      const card = createCard(recipe);
-      recipeContainer.appendChild(card);
-    }
-  });
-}
