@@ -1,0 +1,173 @@
+body {
+	width: 1240px;
+	margin: 0 auto;
+}
+.logo {
+	display: flex;
+	margin: 42px auto 17px auto;
+}
+.search-container {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 17px;
+}
+input[type="search"] {
+	background-color: #e7e7e7;
+	border-radius: 5px;
+	border: none;
+	padding: 8px 12px;
+	width: 100%;
+	height: 70px;
+	box-sizing: border-box;
+	outline: none;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="%23888"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>');
+	background-repeat: no-repeat;
+	background-position: 99% 50%;
+}
+.search-icon {
+	transform: translateY(-50%) rotate(-45deg);
+	font-size: 16px;
+	color: black !important;
+	pointer-events: none;
+}
+
+.dropdown-container {
+	display: flex;
+	justify-content: center;
+	justify-content: flex-start;
+	margin-bottom: 25px;
+}
+
+.btn-group {
+	display: flex;
+}
+
+.btn {
+	border: none;
+	color: white;
+	text-decoration: none;
+	display: flex;
+	font-size: 16px;
+	margin: 0 10px;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 5px;
+	justify-content: space-between;
+}
+
+.btn:first-child {
+	background-color: #3282f7;
+	margin-left: 0px;
+}
+.btn:nth-child(2) {
+	background-color: #68d9a4;
+}
+.btn:last-child {
+	background-color: #ed6454;
+}
+
+input.btn {
+	height: 36px; /* Hauteur ajustée pour correspondre à la hauteur des boutons */
+	border: none; /* Supprime la bordure par défaut des champs de recherche */
+	outline: none; /* Supprime le contour par défaut des champs de recherche */
+}
+
+.chevron {
+	padding-left: 5px;
+}
+
+.offLine {
+	display: none;
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+}
+
+.card {
+	background-color: #f8f8f8;
+	border-radius: 5px;
+	width: 380px;
+	height: 364px;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+
+.headCard {
+	height: 178px;
+	width: 380px;
+	background: #c7bebe;
+	border-radius: 5px 5px 0px 0px;
+}
+.headLine {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+	margin: 0;
+}
+.card h3 {
+	color: black;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	margin-block-end: 0;
+	margin-block-start: 5px;
+	max-width: 220px;
+}
+.time {
+	color: black;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	margin-block-end: 0;
+	margin-block-start: 5px;
+}
+.servings {
+	display: none;
+}
+.recipeExplanation {
+	display: flex;
+	padding: 0 20px;
+	margin: 0;
+}
+.description {
+	width: 171px;
+	height: 109px;
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 12px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 9;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ingredientsList {
+	width: 171px;
+	list-style: none;
+	font-family: "Lato";
+	font-style: normal;
+	font-size: 12px;
+	line-height: 14px;
+	color: #000000;
+	padding: 0 5px 0 0;
+}
+.listItem {
+	list-style: none;
+	display: none;
+}

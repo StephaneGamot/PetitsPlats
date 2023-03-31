@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Les petits plats</title>
+		<meta name="description" content="Sites regroupant 50 recettes avec differents filtres et Tris" />
+		<meta name="author" content="Stephane Gamot" />
+		<meta name="robots" content="noindex" />
+		<script src="https://kit.fontawesome.com/be77b72380.js" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<header>
+			<img src="./IMAGES/logo.png" alt="logo" width="268" height="93" class="logo" />
+			<form id="search-form">
+				<div class="search-container">
+					<input type="search" id="search-input" placeholder="Rechercher une recette" />
+				</div>
+			</form>
+			<div id="results"></div>
+
+			<section>
+				<div class="dropdown-container">
+					<div class="btn-group">
+					  <div class="search-group">
+						<button class="btn" data-label="Ingrédients" data-placeholder="Rechercher un ingrédient">Ingrédients <span class="chevron">▼</span></button>
+						<div class="search-container offLine">
+						  <input type="search" placeholder="Rechercher un ingrédient" />
+						  <div class="suggestions-container"></div>
+						</div>
+					  </div>
+					  <div class="search-group">
+						<button class="btn" data-label="Appareils" data-placeholder="Rechercher un appareil">Appareils <span class="chevron">▼</span></button>
+						<div class="search-container offLine">
+						  <input type="search" placeholder="Rechercher un appareil" />
+						  <div class="suggestions-container"></div>
+						</div>
+					  </div>
+					  <div class="search-group">
+						<button class="btn" data-label="Ustensiles" data-placeholder="Rechercher un ustensile">Ustensiles <span class="chevron">▼</span></button>
+						<div class="search-container offLine">
+						  <input type="search" placeholder="Rechercher un ustensile" />
+						  <div class="suggestions-container"></div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  
+				  
+			</section>
+		</header>
+		<main>
+			<div id="card-container" class="card-container"></div>
+		</main>
+		<script type="module" src="/JS/script.js"></script>
+	</body>
+</html>
