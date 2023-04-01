@@ -1,4 +1,3 @@
-
 export default function displayRecipes(recipes, createCard) {
 	const recipeContainer = document.getElementById("card-container");
 
