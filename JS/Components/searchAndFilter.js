@@ -12,7 +12,9 @@ export default function searchAndFilter(recipes) {
 		const searchTerm = searchInput.value.toLowerCase().trim();
 
 		if (searchTerm.length >= 3) {
-			const filteredRecipes = recipes.filter((recipe) => {
+			const filteredRecipes = recipes.filter((recipe) => {     // je filtre les recettes en fonction des lettres données
+
+				//Création d' une chaîne avec chaques valeurs des recettes (nom, ingrédients et description) en minuscules
 				const recipeValues = [recipe.name, ...recipe.ingredients.map((ingredient) => ingredient.ingredient), recipe.description].join(" ").toLowerCase();
 
 				return recipeValues.includes(searchTerm);
@@ -25,11 +27,11 @@ export default function searchAndFilter(recipes) {
 	});
 
 	/**
-   * La fonction prend en charge une liste de recettes, efface le conteneur de recettes, 
-   * puis parcourt en boucle la liste des recettes et affiche une carte pour chaque recette
-   * @param recipesList - un tableau d'objets contenant les informations relatives aux recettes
-   */
-  function displayRecipes(recipesList) {
+	 * La fonction prend en charge une liste de recettes, efface le conteneur de recettes,
+	 * puis parcourt en boucle la liste des recettes et affiche une carte pour chaque recette
+	 * @param recipesList - un tableau d'objets contenant les informations relatives aux recettes
+	 */
+	function displayRecipes(recipesList) {
 		const recipeContainer = document.getElementById("card-container");
 		recipeContainer.innerHTML = "";
 
