@@ -6,36 +6,52 @@ import createCard from "../Template/createCard.js";
  * @param recipes - un tableau d'objets, chaque objet représentant une recette
  */
 export default function searchAndFilter(recipes) {
-	const searchInput = document.getElementById("search-input");
+  const searchInput = document.getElementById("search-input");
 
-	searchInput.addEventListener("input", function () {
-		const searchTerm = searchInput.value.toLowerCase().trim();
+  searchInput.addEventListener("input", function () {
+    const searchTerm = searchInput.value.toLowerCase().trim();
 
-		if (searchTerm.length >= 3) {
-			const filteredRecipes = recipes.filter((recipe) => {
-				const recipeValues = [recipe.name, ...recipe.ingredients.map((ingredient) => ingredient.ingredient), recipe.description].join(" ").toLowerCase();
+    const filteredRecipes = [];                            // J'initialise un tableau vide pour ensuite pouvoir stocker mes recettes 
 
-				return recipeValues.includes(searchTerm);
-			});
+    for (let i = 0; i < recipes.length; i++) {             // A l'aide de la boucle for je parcous toutes les recettes du tableau "recipes"
+      const recipe = recipes[i];                           // Je récupere la recette courante [i]
 
-			displayRecipes(filteredRecipes);
-		} else {
-			displayRecipes(recipes);
-		}
-	});
+      const ingredients = [];                              // J'initialise un tableau vide pour ensuite pouvoir stocker mes ingrédients
 
-	/**
-   * La fonction prend en charge une liste de recettes, efface le conteneur de recettes, 
-   * puis parcourt en boucle la liste des recettes et affiche une carte pour chaque recette
-   * @param recipesList - un tableau d'objets contenant les informations relatives aux recettes
-   */
-  function displayRecipes(recipesList) {
-		const recipeContainer = document.getElementById("card-container");
-		recipeContainer.innerHTML = "";
+      // Je crée une boucle pour récuperer pour récuperer la propriété ingredient de chaque recette (recipe.ingrédient)
+      for (let j = 0; j < recipe.ingredients.length; j++) {
+        ingredients.push(recipe.ingredients[j].ingredient);
+      }
+      
+      // Je crée un tableau qui récupère toutes les valeurs (nom description, ingredient ...) => miniscule ...
+      const recipeValues = [
+        recipe.name,
+        ...ingredients,
+        recipe.description,
+      ].join(" ").toLowerCase();
 
-		recipesList.forEach((recipe) => {
-			const card = createCard(recipe);
-			recipeContainer.appendChild(card);
-		});
-	}
+      if (recipeValues.includes(searchTerm)) {
+        filteredRecipes.push(recipe);
+      }
+    }
+
+    if (searchTerm.length >= 3) {                          // Si et seulement si j'ai au minimum 3 lettres 
+      displayRecipes(filteredRecipes);
+    } else {
+      displayRecipes(recipes);
+    }
+  });
+
+ // J'affiche mes recettes et je prend en paramètre le tableau de recettes "recipesList"
+ function displayRecipes(recipesList) {
+    const recipeContainer = document.getElementById("card-container");
+    recipeContainer.innerHTML = "";
+
+    // J'utilise une boucle for pour parcourir le tableau de recettes "recipesList"
+    for (let i = 0; i < recipesList.length; i++) {
+      const recipe = recipesList[i];
+      const card = createCard(recipe);
+      recipeContainer.appendChild(card);
+    }
+  }
 }
