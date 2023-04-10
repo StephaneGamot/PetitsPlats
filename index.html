@@ -25,34 +25,40 @@
 			<section>
 				<div class="dropdown-container">
 					<div class="btn-group">
-					  <div class="search-group">
-						<button class="btn" data-label="Ingrédients" data-placeholder="Rechercher un ingrédient">Ingrédients <span class="chevron">▼</span></button>
-						<div class="search-container offLine">
-						  <input type="search" placeholder="Rechercher un ingrédient" />
-						  <div class="suggestions-container"></div>
+						<div class="search-group">
+							<label class="btn" id="allIngredients" for="ingredient">
+								<span id="ingredientsLabel">Ingrédients</span>
+								<input type="text" id="ingredient" class="offLine hidden inputWidth" placeholder="Rechercher un ingrédient" />
+								<i class="fas fa-chevron-down" id="ingredientIcon"></i>
+							</label>
+							<ul class="offLine" id="xxx" data-filter="ingredient"></ul>
 						</div>
-					  </div>
-					  <div class="search-group">
-						<button class="btn" data-label="Appareils" data-placeholder="Rechercher un appareil">Appareils <span class="chevron">▼</span></button>
-						<div class="search-container offLine">
-						  <input type="search" placeholder="Rechercher un appareil" />
-						  <div class="suggestions-container"></div>
+			
+						<div class="search-group">
+							<label class="btn" id="allAppliances" for="appliance">
+								<span id="appliancesLabel">Appareils</span>
+								<input type="text" id="appliance" class="offLine hidden inputWidth" placeholder="Rechercher un appareil" />
+								<i class="fas fa-chevron-down" id="applianceIcon"></i>
+							</label>
+							<ul class="offLine" id="appliance-list" data-filter="appliance"></ul>
 						</div>
-					  </div>
-					  <div class="search-group">
-						<button class="btn" data-label="Ustensiles" data-placeholder="Rechercher un ustensile">Ustensiles <span class="chevron">▼</span></button>
-						<div class="search-container offLine">
-						  <input type="search" placeholder="Rechercher un ustensile" />
-						  <div class="suggestions-container"></div>
+			
+						<div class="search-group">
+							<label class="btn" id="allUstensils" for="ustensil">
+								<span id="ustensilsLabel">Ustensiles</span>
+								<input type="text" id="ustensil" class="offLine hidden inputWidth" placeholder="Rechercher un ustensile" />
+								<i class="fas fa-chevron-down" id="ustensilIcon"></i>
+							</label>
+							<ul class="offLine" id="ustensil-list" data-filter="ustensil"></ul>
 						</div>
-					  </div>
 					</div>
-				  </div>
-				  
+				</div>
 			</section>
+			
 		</header>
 		<main>
 			<div id="card-container" class="card-container"></div>
+			
 		</main>
 		<script type="module" src="/JS/script.js"></script>
 	</body>
