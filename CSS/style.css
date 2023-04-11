@@ -56,9 +56,6 @@ input[type="search"] {
 	display: flex;
 }
 .btn {
-	display: flex;
-	align-items: center;
-	justify-content: space-between !important;
 	border: none;
 	color: white;
 	text-decoration: none;
@@ -85,6 +82,7 @@ input[type="search"] {
 	min-width: 170px;
 	height: 69px;
 	border-radius: 5px;
+	justify-content: space-between;
 }
 
 .search-group:first-child {
@@ -97,10 +95,13 @@ input[type="search"] {
 .search-group:last-child {
 	background-color: #ed6454;
 }
+
 input {
 	height: 36px;
 }
-
+.fa-chevron-up {
+	display: none;
+}
 input.btn {
 	min-height: 69px;
 	margin: 0 10px;

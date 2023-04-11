@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		label.addEventListener("click", () => {
 			const span = label.querySelector("span");
 			const input = label.querySelector("input");
-			const icon = label.querySelector("i");
+			const iconChevronDown = label.querySelector(".fa-chevron-down");
+			const iconChevronUp = label.querySelector(".fa-chevron-up");
       const ingredients = getAllIngredients();
       displayIngredients(ingredients);
 			span.style.display = "none";
@@ -34,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ingredientsLabel.style.display = "block";
 
 
-			icon.classList.add("rotate-chevron");
+	  iconChevronDown.style.display = "none";
+	  iconChevronUp.style.display = "block";
 		});
 	});
 });
