@@ -1,4 +1,5 @@
 import { recipes } from "../Data/recipes.js";
+import createTag from "../Template/createTag.js";
 
 function isPlural(ingredient) {
   return ingredient.endsWith('s') && recipes.some(recipe => {
@@ -27,14 +28,20 @@ function formatIngredient(ingredient) {
   return ingredient.charAt(0).toUpperCase() + ingredient.slice(1).toLowerCase();
 }
 
+  
 export function displayIngredients(ingredients) {
-  const ulElement = document.getElementById("xxx");
-
-  const sortedIngredients = sortIngredientsAlphabetically(ingredients);
-
-  sortedIngredients.forEach((ingredient) => {
-    const liElement = document.createElement("li");
-    liElement.textContent = formatIngredient(ingredient);
-    ulElement.appendChild(liElement);
-  });
-}
+	const ulElement = document.getElementById("xxx");
+  
+	const sortedIngredients = sortIngredientsAlphabetically(ingredients);
+  
+	sortedIngredients.forEach((ingredient) => {
+	  const liElement = document.createElement("li");
+	  liElement.textContent = formatIngredient(ingredient);
+  
+	  liElement.addEventListener("click", () => {
+		createTag(formatIngredient(ingredient));
+	  });
+  
+	  ulElement.appendChild(liElement);
+	});
+  }
