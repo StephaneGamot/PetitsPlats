@@ -4,6 +4,9 @@ import createCard from "./Template/createCard.js";
 import searchAndFilter from "./Components/searchAndFilter.js";
 import displayRecipes from "./Components/displayRecipes.js";
 import { getAllIngredients, displayIngredients } from "./Components/ingredients.js";
+import createTag from "./Template/createTag.js";
+
+
 /*
 const label = document.getElementById("allIngredients");
 const span = document.getElementById("ingredientsLabel");
@@ -12,6 +15,8 @@ const input = document.getElementById("ingredient");
 const ingredientsLabel = document.getElementById("ingredientsLabel");
 const ingredientsSpan = document.getElementById("ingredientsSpan");
 const ingredientInput = document.getElementById("ingredientInput");
+const listItems = document.querySelectorAll("#xxx li");
+
 
 document.addEventListener("DOMContentLoaded", function () {
 	searchAndFilter(recipes);
@@ -28,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
       displayIngredients(ingredients);
 			span.style.display = "none";
 			input.style.display = "flex";
-
 			span.classList.toggle("hidden");
 			input.classList.toggle("hidden");
 
@@ -37,6 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	  iconChevronDown.style.display = "none";
 	  iconChevronUp.style.display = "block";
+
+	  input.focus();
 		});
 	});
+
+
+    listItems.forEach(function(item) {
+        item.addEventListener("click", function(event) {
+			event.stopPropagation();
+            var selectedIngredient = this.textContent;
+            createTag(selectedIngredient);
+        });
+    });
 });
