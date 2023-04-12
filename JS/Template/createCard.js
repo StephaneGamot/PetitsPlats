@@ -4,6 +4,7 @@ import { cardContainer } from "../Data/allConstantes.js";
 export default function createCard(recipe) {
 	const card = document.createElement("div");
 	card.className = "card";
+	card.dataset.recipe = JSON.stringify(recipe); 
 
 	const headCard = document.createElement("img");
 	headCard.className = "headCard";

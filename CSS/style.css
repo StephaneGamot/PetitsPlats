@@ -183,7 +183,6 @@ input.listDisplay::-moz-placeholder {
     position: relative;
     z-index: 2000;
     color: white;
-    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     display: grid;
