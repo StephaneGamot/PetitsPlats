@@ -17,44 +17,46 @@
 			<img src="./IMAGES/logo.png" alt="logo" width="268" height="93" class="logo" />
 			<form id="search-form">
 				<div class="search-container">
-					<input type="search" id="search-input" placeholder="Rechercher une recette" />
+					<input type="search" id="search-input" placeholder="Rechercher une recette, un ingrédient, une description..." />
 				</div>
 			</form>
-			<div id="results"></div>
+			<div id="noRecipyAvailable"></div>
 
 			<section>
 				<div id="tags"></div>
 				<div class="dropdown-container">
-					
 					<div class="btn-group">
 						<div class="search-group">
 							<label class="btn" id="ingredientsLabel" for="ingredient">
-							<div class="space-between">	<span id="ingredientsSpan">Ingrédients</span><i class="fas fa-chevron-down" id=""></i></div>
+								<div class="space-between"><span id="ingredientsSpan">Ingrédients</span><i class="fas fa-chevron-down" id="ingredientChevronDown"></i></div>
 								<div class="ingredientPlaceholder">
 									<input type="text" id="ingredientInput" class="listDisplay hidden inputWidth" placeholder="Rechercher un ingrédient" />
-									<i class="fas fa-chevron-up" id="ingredientIcon"></i>
+									<i class="fas fa-chevron-up" id="ingredientChevronUp"></i>
 								</div>
-								<div class="listDisplay" id="xxx" data-filter="ingredient"></div>
+								<div class="listDisplay" id="ingredientsList" data-filter="ingredient"></div>
 							</label>
-						</div>
-						
-
-						<div class="search-group">
-							<label class="btn" id="allAppliances" for="appliance">
-								<span id="appliancesLabel">Appareils</span>
-								<input type="text" id="appliance" class="listDisplay hidden inputWidth" placeholder="Rechercher un appareil" />
-								<i class="fas fa-chevron-down" id="applianceIcon"></i>
-							</label>
-							<ul class="listDisplay" id="appliance-list" data-filter="appliance"></ul>
 						</div>
 
 						<div class="search-group">
-							<label class="btn" id="allUstensils" for="ustensil">
-								<span id="ustensilsLabel">Ustensiles</span>
-								<input type="text" id="ustensil" class="listDisplay hidden inputWidth" placeholder="Rechercher un ustensile" />
-								<i class="fas fa-chevron-down" id="ustensilIcon"></i>
+							<label class="btn" id="appliancesLabel" for="appliance">
+								<div class="space-between"><span id="appliancesSpan">Appareils</span><i class="fas fa-chevron-down" id="applianceChevronDown"></i></div>
+								<div class="appliancePlaceholder">
+									<input type="text" id="applianceInput" class="listDisplay hidden inputWidth" placeholder="Rechercher un appareil" />
+									<i class="fas fa-chevron-up" id="applianceChevronUp"></i>
+								</div>
+								<div class="listDisplay" id="applianceList" data-filter="appliance"></div>
 							</label>
-							<ul class="listDisplay" id="ustensil-list" data-filter="ustensil"></ul>
+						</div>
+
+						<div class="search-group">
+							<label class="btn" id="ustensilsLabel" for="ustensil">
+								<div class="space-between"><span id="ustensilsSpan">Ustensiles</span><i class="fas fa-chevron-down" id="ustensilChevronDown"></i></div>
+								<div class="ustensilPlaceholder">
+									<input type="text" id="ustensilInput" class="listDisplay hidden inputWidth" placeholder="Rechercher un ustensil" />
+									<i class="fas fa-chevron-up" id="ustensilChevronUp"></i>
+								</div>
+								<div class="listDisplay" id="ustensilList" data-filter="ustensil"></div>
+							</label>
 						</div>
 					</div>
 				</div>

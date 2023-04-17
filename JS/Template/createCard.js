@@ -1,5 +1,6 @@
 import { recipes } from "../Data/recipes.js";
-import { cardContainer } from "../Data/allConstantes.js";
+
+const cardContainer = document.getElementById("card-container");
 
 export default function createCard(recipe) {
 	const card = document.createElement("div");
