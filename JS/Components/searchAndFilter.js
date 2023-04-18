@@ -58,6 +58,7 @@ export function filterRecipes() {
 	const searchInput = document.getElementById("search-input");
 	const searchTerm = searchInput.value.toLowerCase().trim();
 	const tagContainer = document.getElementById("tags");
+  // renvoi directement aux enfants de de TagContainer = les Tags; 
 	const selectedTags = Array.from(tagContainer.children).map((tagElement) => tagElement.textContent.trim());
 
 	let filteredRecipes = recipes.slice();                        // Réinitialise filteredRecipes à sa valeur d'origine avant d'appliquer les filtres
